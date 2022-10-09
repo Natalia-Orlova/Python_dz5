@@ -17,5 +17,20 @@
 # out
 # The data is incorrect
 
-def create_text(n):
-    
+from random import sample
+
+def form_word_list(count, alph = 'абв'):
+    result = []
+    for i in range(count):
+        temp = sample(alph, 3)
+        result.append("".join(temp))
+    return " ".join(result)
+
+def del_word(word_list):
+    return word_list.replace('абв ', "")
+
+
+count = int(input("Введите количество слов: "))
+full_list = form_word_list(count)
+print(full_list)
+print(del_word(full_list))
